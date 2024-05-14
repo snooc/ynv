@@ -1,6 +1,6 @@
 # ynv
 
-ynv is a utilizty that allows you to easily navigate large YAML output containing multiple documents. It's primary use-case
+ynv is a utility that allows you to easily navigate large YAML output containing multiple documents. It's primary use-case
 is when working with [Helm](https://helm.sh/) or other Kubernetes tools that output a large amounts of YAML.
 
 ## Installation
