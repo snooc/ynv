@@ -43,14 +43,3 @@ changelog:
     exclude:
       - "^docs:"
       - "^test:"
-
-brews:
-  - name: ynv
-    repository:
-      owner: snooc
-      name: homebrew-ynv
-    commit_author:
-      name: goreleaserbot
-      email: goreleaser@codycoons.com
-    homepage: https://github.com/snooc/ynv
-    license: MIT
