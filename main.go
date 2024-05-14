@@ -12,9 +12,9 @@ import (
 	"github.com/jessevdk/go-flags"
 )
 
-var BuildVersion = "dev"
-var BuildCommit = "dev"
-var BuildDate = "n/a"
+var buildVersion = "dev"
+var buildCommit = "dev"
+var buildDate = "n/a"
 
 var opts struct {
 	Files       []string `short:"f" long:"file" description:"A file to process"`
@@ -146,5 +146,5 @@ func parseInput(in *bufio.Reader) ([]string, []*bytes.Buffer, error) {
 }
 
 func printVersion() {
-	fmt.Printf("ynv %s (%s) %s\n", BuildVersion, BuildCommit, BuildDate)
+	fmt.Printf("ynv %s (%s) %s\n", buildVersion, buildCommit, buildDate)
 }
