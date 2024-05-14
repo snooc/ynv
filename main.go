@@ -12,9 +12,14 @@ import (
 	"github.com/jessevdk/go-flags"
 )
 
+var buildVersion = "dev"
+var buildCommit = "dev"
+var buildDate = "n/a"
+
 var opts struct {
 	Files       []string `short:"f" long:"file" description:"A file to process"`
 	Interactive bool     `short:"i" long:"interactive" description:"Interactive mode" env:"YNV_INTERACTIVE"`
+	Version     bool     `short:"v" long:"version" description:"Print version"`
 }
 
 func main() {
@@ -31,6 +36,11 @@ func main() {
 			fmt.Printf("Error: %v\n", err)
 			os.Exit(1)
 		}
+	}
+
+	if opts.Version {
+		printVersion()
+		os.Exit(0)
 	}
 
 	// Store list of files to filter with
@@ -133,4 +143,8 @@ func parseInput(in *bufio.Reader) ([]string, []*bytes.Buffer, error) {
 	}
 
 	return files, buffers, nil
+}
+
+func printVersion() {
+	fmt.Printf("ynv %s (%s) %s\n", buildVersion, buildCommit, buildDate)
 }
